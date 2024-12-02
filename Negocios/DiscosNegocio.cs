@@ -32,7 +32,17 @@ namespace Negocios
                     Discos aux = new Discos();
                     aux.Id = lector.GetInt32(0);
                     aux.Titulo = (string)lector["titulo"];
+
+                    // 2 Formas de validar Null (solo hacerlo no es not null en la db):
+                    //if (!(lector.IsDBNull(lector.GetOrdinal("FechaLanzamiento"))))
+                     //aux.FechaLanzamiento = (DateTime)lector["FechaLanzamiento"];
+
+                    // la otra mas facil:
+                    //if (!(lector["FechaLanzamiento"] is DBNull))
+                    //aux.FechaLanzamiento = (DateTime)lector["FechaLanzamiento"];
+
                     aux.Canciones = lector.GetInt32(2);
+                    //if (!(lector["URLimagenTapa"] is DBNull))
                     aux.URLimagenTapa = (string)lector["URLimagenTapa"];
                     aux.Genero = new Estilos();
                     aux.Genero.descripcion = (string)lector["Descripcion_Genero"];
@@ -59,8 +69,10 @@ namespace Negocios
             {
                 datos.Consulta("insert into DISCOS (Titulo, CantidadCanciones, UrlImagenTapa," +
                     "IdEstilo, IdTipoEdicion) values ('" + nuevo.Titulo +"', "+ nuevo.Canciones +", '"+ nuevo.URLimagenTapa +"', @IdEstilo, @IdTipoEdicion)");
+                //datos.Consulta("insert into DISCOS (Titulo, CantidadCanciones," +
+                //    "IdEstilo, IdTipoEdicion) values ('" + nuevo.Titulo + "', " + nuevo.Canciones + ", @IdEstilo, @IdTiposEdicion)");
                 datos.setParametro("@IdEstilo", nuevo.Genero.id);
-                datos.setParametro("@IdTiposEdicion", nuevo.Tipo.id);
+                datos.setParametro("@IdTipoEdicion", nuevo.Tipo.id);
                 datos.ejectuarAccion();
             }
             catch (Exception ex)

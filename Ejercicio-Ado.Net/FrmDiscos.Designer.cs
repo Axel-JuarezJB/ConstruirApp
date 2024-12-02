@@ -38,8 +38,11 @@
             // dgvDiscos
             // 
             this.dgvDiscos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDiscos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDiscos.Location = new System.Drawing.Point(36, 71);
+            this.dgvDiscos.MultiSelect = false;
             this.dgvDiscos.Name = "dgvDiscos";
+            this.dgvDiscos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiscos.Size = new System.Drawing.Size(378, 185);
             this.dgvDiscos.TabIndex = 0;
             this.dgvDiscos.SelectionChanged += new System.EventHandler(this.dgvDiscos_SelectionChanged);
@@ -63,7 +66,7 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // Form1
+            // FrmDiscos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,7 +74,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxAlbum);
             this.Controls.Add(this.dgvDiscos);
-            this.Name = "Form1";
+            this.Name = "FrmDiscos";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();

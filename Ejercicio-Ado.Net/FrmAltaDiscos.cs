@@ -60,6 +60,32 @@ namespace Ejercicio_Ado.Net
 
                 MessageBox.Show(ex.ToString());
             }
+            //try
+            //{
+            //    cboEdicion.DataSource = edicionNegocio.listar();
+            //}
+            //catch (Exception exx)
+            //{
+
+            //    MessageBox.Show(exx.ToString());
+            //}
+        }
+
+        private void tbxImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(tbxImagen.Text);
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxDisco.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbxDisco.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+            }
         }
     }
 }
