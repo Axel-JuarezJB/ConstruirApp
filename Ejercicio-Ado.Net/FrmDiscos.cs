@@ -46,13 +46,13 @@ namespace Ejercicio_Ado.Net
                 listaDiscos = negocio.listar();
                 dgvDiscos.DataSource = negocio.listar();
                 dgvDiscos.Columns["URLimagenTapa"].Visible = false;
-                pbxAlbum.Load(listaDiscos[0].URLimagenTapa);
+                //pbxAlbum.Load(listaDiscos[0].URLimagenTapa);
                 cargarImagen(listaDiscos[0].URLimagenTapa);
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.ToString());
             }
         }
         private void cargarImagen(string imagen)
