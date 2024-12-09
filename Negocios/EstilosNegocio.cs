@@ -16,13 +16,14 @@ namespace Negocios
             AccesoDatos datos = new AccesoDatos ();
             try
             {
-                datos.Consulta("select Descripcion, RegionOrigen from ESTILOS");
+                datos.Consulta("select id, Descripcion, RegionOrigen from ESTILOS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Estilos aux = new Estilos ();
-                    aux.descripcion = (string)datos.Lector["Descripcion"];
+                    aux.IdEstilo = (int)datos.Lector["id"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.RegionOrigen = (string)datos.Lector["RegionOrigen"];
                     lista.Add(aux);
                 }

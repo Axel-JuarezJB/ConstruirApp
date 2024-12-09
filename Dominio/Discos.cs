@@ -11,10 +11,11 @@ namespace Dominio
     public class Discos
     {
         public int Id { get; set; }
-        
+        //public int IdEstilo { get; set; }
+
         public string Titulo { get; set; }
-        [DisplayName("Fecha de Lanzamiento")] // using component model
-        public DateTime FechaLanzamiento { get; set; }
+        //[DisplayName("Fecha de Lanzamiento")] // using component model
+        //1public DateTime FechaLanzamiento { get; set; }
         public  int Canciones { get; set; }
         public string URLimagenTapa{ get; set; }
         public Estilos Genero { get; set; }

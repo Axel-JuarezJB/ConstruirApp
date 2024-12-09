@@ -16,12 +16,13 @@ namespace Negocios
 
             try
             {
-                datos.Consulta("select Descripcion from TIPOSEDICION");
+                datos.Consulta("select id, Descripcion from TIPOSEDICION");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     TiposEdicion aux = new TiposEdicion();
+                    aux.IdTipoEdicion = (int)datos.Lector["id"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     lista.Add(aux);
                 }

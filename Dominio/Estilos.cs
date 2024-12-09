@@ -8,12 +8,12 @@ namespace Dominio
 {
     public class Estilos
     {
-        public int id { get; set; }
-        public string descripcion { get; set; }
+        public int IdEstilo { get; set; }
+        public string Descripcion { get; set; }
         public string RegionOrigen { get; set; }
         public override string ToString()
         {
-            return descripcion;
+            return Descripcion;
         }
     }
 }

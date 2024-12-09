@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class TiposEdicion
     {
-        public int id { get; set; }
+        public int IdTipoEdicion { get; set; }
         public string Descripcion { get; set; }
         public override string ToString()
         {

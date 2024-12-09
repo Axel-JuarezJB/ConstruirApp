@@ -41,6 +41,7 @@
             this.lblEdicion = new System.Windows.Forms.Label();
             this.cboEdicion = new System.Windows.Forms.ComboBox();
             this.pbxDisco = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDisco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,21 +149,33 @@
             this.cboEdicion.Name = "cboEdicion";
             this.cboEdicion.Size = new System.Drawing.Size(121, 21);
             this.cboEdicion.TabIndex = 4;
+            this.cboEdicion.SelectedIndexChanged += new System.EventHandler(this.cboEdicion_SelectedIndexChanged);
             // 
             // pbxDisco
             // 
-            this.pbxDisco.Location = new System.Drawing.Point(314, 35);
+            this.pbxDisco.Location = new System.Drawing.Point(336, 33);
             this.pbxDisco.Name = "pbxDisco";
             this.pbxDisco.Size = new System.Drawing.Size(238, 215);
             this.pbxDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxDisco.TabIndex = 14;
             this.pbxDisco.TabStop = false;
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(281, 100);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(23, 23);
+            this.btnAgregarImagen.TabIndex = 15;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmAltaDiscos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 291);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pbxDisco);
             this.Controls.Add(this.cboEdicion);
             this.Controls.Add(this.lblEdicion);
@@ -200,5 +213,6 @@
         private System.Windows.Forms.Label lblEdicion;
         private System.Windows.Forms.ComboBox cboEdicion;
         private System.Windows.Forms.PictureBox pbxDisco;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
